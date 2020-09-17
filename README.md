@@ -23,7 +23,7 @@
 | ----------------------- | ---------- | ------------------------------ |
 | name                    | string     | null: false                    |
 | description             | string     | null: false                    |
-| category                | string     | null: false                    |
+| category_id             | integer    | null: false                    |
 | condition_id            | integer    | null: false                    |
 | bear_shipping_fee_id    | integer    | null: false                    | 
 | shipping_from_id        | integer    | null: false                    | 
@@ -35,6 +35,7 @@
 ### Asociation
 - belongs_to :users
 - belongs_to :item_purchases
+- belongs_to_active_hash :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :bear_shipping_fee_id
 - belongs_to_active_hash :shipping_from_id
