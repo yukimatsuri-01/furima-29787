@@ -33,8 +33,8 @@
 | buy                     | references | null: false, foreing_key: true |
 
 ### Asociation
-- belongs_to :users
-- belongs_to :item_purchases
+- belongs_to :user
+- belongs_to :item_purchase
 - belongs_to_active_hash :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :bear_shipping_fee_id
@@ -49,20 +49,21 @@
 | item             | references | null: false, foreing_key: true |
 
 ### Asociation
-- belongs_to :items
-- belongs_to :users
-- has_one :addresses
+- belongs_to :item
+- belongs_to :user
+- has_one :address
 
 ## addresses テーブル
 
-| Column       | Type    | Options     |
-| ------------ | ------- | ----------- |
-| postal_code  | integer | null: false |
-| prefecture   | integer | null: false |
-| city         | integer | null: false |
-| address_line | integer | null: false |
-| building     | integer |             |
-| phone_number | integer | null: false |
+| Column        | Type    | Options     |
+| ------------  | ------- | ----------- |
+| postal_code   | string  | null: false |
+| prefecture_id | integer | null: false |
+| city          | integer | null: false |
+| address_line  | integer | null: false |
+| building      | integer |             |
+| phone_number  | integer | null: false |
 
 ### Asociation
-- belongs_to :item_purchases
+- belongs_to :item_purchase
+- belongs_to_active_hash :prefecture_id
