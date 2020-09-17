@@ -30,11 +30,11 @@
 | shipping_within_days_id | integer    | null: false                    | 
 | sale_price              | integer    | null: false                    |
 | user                    | references | null: false, foreing_key: true |
-| buy                     | references | null: false, foreing_key: true |
+| item_purchase           | references | null: false, foreing_key: true |
 
 ### Asociation
 - belongs_to :user
-- belongs_to :item_purchase
+- has_one :item_purchase
 - belongs_to_active_hash :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :bear_shipping_fee_id
@@ -59,9 +59,9 @@
 | ------------  | ------- | ----------- |
 | postal_code   | string  | null: false |
 | prefecture_id | integer | null: false |
-| city          | integer | null: false |
-| address_line  | integer | null: false |
-| building      | integer |             |
+| city          | string  | null: false |
+| address_line  | string  | null: false |
+| building      | string  |             |
 | phone_number  | string  | null: false |
 
 ### Asociation
