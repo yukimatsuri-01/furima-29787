@@ -62,7 +62,7 @@
 | city          | integer | null: false |
 | address_line  | integer | null: false |
 | building      | integer |             |
-| phone_number  | integer | null: false |
+| phone_number  | string  | null: false |
 
 ### Asociation
 - belongs_to :item_purchase
