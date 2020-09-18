@@ -6,7 +6,7 @@
 | --------------------- | ------- | ----------- |
 | nickname              | string  | null: false |
 | email                 | string  | null: false |
-| password              | string  | null: false |
+| encrypted_password    | string  | null: false |
 | family_name_kanji     | string  | null: false |
 | first_name_kanji      | string  | null: false |
 | family_name_katakana  | string  | null: false |
@@ -22,7 +22,7 @@
 | Column                  | Type       | Options                        |
 | ----------------------- | ---------- | ------------------------------ |
 | name                    | string     | null: false                    |
-| description             | string     | null: false                    |
+| description             | text       | null: false                    |
 | category_id             | integer    | null: false                    |
 | condition_id            | integer    | null: false                    |
 | bear_shipping_fee_id    | integer    | null: false                    | 
