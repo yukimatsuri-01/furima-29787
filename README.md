@@ -1,24 +1,69 @@
-# README
+# テーブル設計
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## users テーブル
 
-Things you may want to cover:
+| Column                | Type    | Options     |
+| --------------------- | ------- | ----------- |
+| nickname              | string  | null: false |
+| email                 | string  | null: false |
+| encrypted_password    | string  | null: false |
+| family_name_kanji     | string  | null: false |
+| first_name_kanji      | string  | null: false |
+| family_name_katakana  | string  | null: false |
+| first_name_katakana   | string  | null: false |
+| birth_day             | date    | null: false |
 
-* Ruby version
+### Asociation
+- has_many :items
+- has_many :item_purchases
 
-* System dependencies
+## items テーブル
 
-* Configuration
+| Column                  | Type       | Options                        |
+| ----------------------- | ---------- | ------------------------------ |
+| name                    | string     | null: false                    |
+| description             | text       | null: false                    |
+| category_id             | integer    | null: false                    |
+| condition_id            | integer    | null: false                    |
+| bear_shipping_fee_id    | integer    | null: false                    | 
+| shipping_from_id        | integer    | null: false                    | 
+| shipping_within_days_id | integer    | null: false                    | 
+| sale_price              | integer    | null: false                    |
+| user                    | references | null: false, foreing_key: true |
 
-* Database creation
+### Asociation
+- belongs_to :user
+- has_one :item_purchase
+- belongs_to_active_hash :category
+- belongs_to_active_hash :condition
+- belongs_to_active_hash :bear_shipping_fee_id
+- belongs_to_active_hash :shipping_from_id
+- belongs_to_active_hash :shipping_within_days_id
 
-* Database initialization
+## item_purchases テーブル
 
-* How to run the test suite
+| Column           | Type       | Options                        |
+| ---------------- | ---------- |------------------------------- | 
+| user             | references | null: false, foreing_key: true |
+| item             | references | null: false, foreing_key: true |
 
-* Services (job queues, cache servers, search engines, etc.)
+### Asociation
+- belongs_to :item
+- belongs_to :user
+- has_one :address
 
-* Deployment instructions
+## addresses テーブル
 
-* ...
+| Column        | Type       | Options                        |
+| ------------  | -------    | -----------                    |
+| postal_code   | string     | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| city          | string     | null: false                    |
+| address_line  | string     | null: false                    |
+| building      | string     |                                |
+| phone_number  | string     | null: false                    |
+| item_purchase | references | null: false, foreing_key: true |
+
+### Asociation
+- belongs_to :item_purchase
+- belongs_to_active_hash :prefecture_id
