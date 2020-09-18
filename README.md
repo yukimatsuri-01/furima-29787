@@ -30,7 +30,6 @@
 | shipping_within_days_id | integer    | null: false                    | 
 | sale_price              | integer    | null: false                    |
 | user                    | references | null: false, foreing_key: true |
-| item_purchase           | references | null: false, foreing_key: true |
 
 ### Asociation
 - belongs_to :user
@@ -55,14 +54,15 @@
 
 ## addresses テーブル
 
-| Column        | Type    | Options     |
-| ------------  | ------- | ----------- |
-| postal_code   | string  | null: false |
-| prefecture_id | integer | null: false |
-| city          | string  | null: false |
-| address_line  | string  | null: false |
-| building      | string  |             |
-| phone_number  | string  | null: false |
+| Column        | Type       | Options                        |
+| ------------  | -------    | -----------                    |
+| postal_code   | string     | null: false                    |
+| prefecture_id | integer    | null: false                    |
+| city          | string     | null: false                    |
+| address_line  | string     | null: false                    |
+| building      | string     |                                |
+| phone_number  | string     | null: false                    |
+| item_purchase | references | null: false, foreing_key: true |
 
 ### Asociation
 - belongs_to :item_purchase
