@@ -4,12 +4,14 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
-  validates :nickname, presence: true, length: { maximum: 40 }
+  valid_kana_kanji_regex = /\A[一-龥ぁ-ん]+\z/
+  valid_katakana_regex = /\A[ァ-ヶー－]+\z/
   with_options presence: true do
-    validates :family_name_kanji, format: { with: /\A[一-龥ぁ-ん]+\z/ }
-    validates :first_name_kanji, format: { with: /\A[一-龥ぁ-ん]+\z/ }
-    validates :family_name_katakana, format: { with: /\A[ァ-ヶー－]+\z/ }
-    validates :first_name_katakana, format: { with: /\A[ァ-ヶー－]+\z/ }
+    validates :nickname, length: { maximum: 40 }
+    validates :family_name_kanji, format: { with: valid_kana_kanji_regex }
+    validates :first_name_kanji, format: { with: valid_kana_kanji_regex }
+    validates :family_name_katakana, format: { with: valid_katakana_regex }
+    validates :first_name_katakana, format: { with: valid_katakana_regex }
     validates :birth_day
     validates :password, format: { with: /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]{6,}+\z/i }
   end
