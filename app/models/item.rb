@@ -7,7 +7,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :condition
   belongs_to_active_hash :bear_shipping_fee
   belongs_to_active_hash :shipping_from
-  belongs_to_active_hash :shipping_within_days_id
+  belongs_to_active_hash :shipping_within_day
 
   with_options presence: true do
     validates :image
@@ -22,6 +22,6 @@ class Item < ApplicationRecord
     validates :condition_id
     validates :bear_shipping_fee_id
     validates :shipping_from_id
-    validates :shipping_within_days_id
+    validates :shipping_within_day_id
   end
 end

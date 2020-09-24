@@ -27,7 +27,7 @@
 | condition_id            | integer    | null: false                    |
 | bear_shipping_fee_id    | integer    | null: false                    | 
 | shipping_from_id        | integer    | null: false                    | 
-| shipping_within_days_id | integer    | null: false                    | 
+| shipping_within_day_id | integer    | null: false                    | 
 | sale_price              | integer    | null: false                    |
 | user                    | references | null: false, foreing_key: true |
 
@@ -38,7 +38,7 @@
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :bear_shipping_fee_id
 - belongs_to_active_hash :shipping_from_id
-- belongs_to_active_hash :shipping_within_days_id
+- belongs_to_active_hash :shipping_within_day_id
 
 ## item_purchases テーブル
 
