@@ -35,10 +35,16 @@ RSpec.describe Item, type: :model do
       expect(@item.errors.full_messages).to include("Sale price can't be blank")
     end
 
-    it 'sale_priceが範囲外の値段だと保存できない' do
+    it 'sale_priceが9,999,999より大きいと保存できない' do
       @item.sale_price = '10000000'
       @item.valid?
       expect(@item.errors.full_messages).to include('Sale price must be less than 10000000')
+    end
+
+    it 'sale_priceが300未満だと保存できない' do
+      @item.sale_price = '100'
+      @item.valid?
+      expect(@item.errors.full_messages).to include('Sale price must be greater than 300')
     end
 
     it 'sale_priceが半角数字以外だと保存できない' do
