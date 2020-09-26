@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     before do
       @user = FactoryBot.build(:user)
     end
-    
+
     it 'すべての値が正しく入力されていれば登録できること' do
       expect(@user).to be_valid
     end
