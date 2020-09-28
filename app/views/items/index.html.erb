@@ -131,7 +131,7 @@
       <%# 商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
       <% @items.each do |item| %>
       <li class='list'>
-          <%= link_to "#" do %>
+          <%= link_to item_path(item.id), method: :get do %>
           <div class='item-img-content'>
             <%= image_tag item.image, class: "item-img" %>
             <%# 商品が売れていればsold outを表示しましょう %>
@@ -152,8 +152,8 @@
               </div>
             </div>
           </div>
+          <% end %>
       </li>
-      <% end %>
       <% end %>
       <%# //商品のインスタンス変数になにか入っている場合、中身のすべてを展開できるようにしましょう %>
 
