@@ -27,7 +27,7 @@
 | condition_id            | integer    | null: false                    |
 | bear_shipping_fee_id    | integer    | null: false                    | 
 | shipping_from_id        | integer    | null: false                    | 
-| shipping_within_day_id　| integer    | null: false                    | 
+| shipping_within_day_id  | integer    | null: false                    | 
 | sale_price              | integer    | null: false                    |
 | user                    | references | null: false, foreing_key: true |
 
