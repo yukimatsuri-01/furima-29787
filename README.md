@@ -15,7 +15,7 @@
 
 ### Asociation
 - has_many :items
-- has_many :item_purchases
+- has_many :orders
 
 ## items テーブル
 
@@ -33,7 +33,7 @@
 
 ### Asociation
 - belongs_to :user
-- has_one :item_purchase
+- has_one :order
 - belongs_to_active_hash :category
 - belongs_to_active_hash :condition
 - belongs_to_active_hash :bear_shipping_fee_id
@@ -41,7 +41,7 @@
 - belongs_to_active_hash :shipping_within_day_id
 
 
-## item_purchases テーブル
+## orders テーブル
 
 | Column           | Type       | Options                        |
 | ---------------- | ---------- |------------------------------- | 
@@ -63,8 +63,8 @@
 | address_line  | string     | null: false                    |
 | building      | string     |                                |
 | phone_number  | string     | null: false                    |
-| item_purchase | references | null: false, foreing_key: true |
+| order         | references | null: false, foreing_key: true |
 
 ### Asociation
-- belongs_to :item_purchase
+- belongs_to :order
 - belongs_to_active_hash :prefecture_id
