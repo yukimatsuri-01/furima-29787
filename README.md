@@ -16,6 +16,7 @@
 ### Asociation
 - has_many :items
 - has_many :orders
+- has_one :address
 
 ## items テーブル
 
@@ -47,11 +48,13 @@
 | ---------------- | ---------- |------------------------------- | 
 | user             | references | null: false, foreing_key: true |
 | item             | references | null: false, foreing_key: true |
+| address          | references | null: false, foreing_key: true |
 
 ### Asociation
 - belongs_to :item
 - belongs_to :user
-- has_one :address
+- belongs_to :address
+
 
 ## addresses テーブル
 
@@ -63,8 +66,8 @@
 | address_line  | string     | null: false                    |
 | building      | string     |                                |
 | phone_number  | string     | null: false                    |
-| order         | references | null: false, foreing_key: true |
+| user          | references | null: false, foreing_key: true |
 
 ### Asociation
-- belongs_to :order
+- belongs_to :user
 - belongs_to_active_hash :prefecture_id
