@@ -116,40 +116,18 @@
   padding: 0 5px;
 }
 
-.form-bottom-text {
-  font-size: 15px;
-  margin-top: 10px;
-  text-align: center;
-}
-
-.form-bottom-text:last-child {
-  margin: 0;
-  padding-bottom: 50px;
-}
-
-.form-bottom-text>span {
-  color: #0099e8;
-  cursor: pointer;
-}
-
-.register-btn {
+.actions {
   width: 50%;
   margin: 0 auto;
 }
 
-.register-red-btn {
+.next-btn {
   width: 100%;
-  background: #ea352d;
-  border: 1px solid #ea352d;
+  background: #b3b3b3;
+  border: 1px solid #b3b3b3;
   color: #fff;
   line-height: 48px;
   font-size: 14px;
   cursor: pointer;
-}
-
-.register-info {
   margin: 30px 180px 0 0;
-  color: #0099e8;
-  text-align: right;
-  cursor: pointer;
 }
