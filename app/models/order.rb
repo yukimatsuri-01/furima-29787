@@ -3,5 +3,5 @@ class Order < ApplicationRecord
   belongs_to :user
   belongs_to :address
 
-  validates :token
+  validates :token, presence: true
 end
