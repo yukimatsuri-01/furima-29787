@@ -1,6 +1,6 @@
 <%= render "shared/second-header"%>
 
-<%= form_with model: @address, class: 'registration-main', local: true do |f| %>
+<%= form_with model: @address, url: addresses_path(@user), class: 'registration-main', local: true do |f| %>
 
 <div class='form-wrap'>
   <div class='form-header'>
@@ -9,13 +9,10 @@
     </h1>
   </div>
 
-  <%= render 'devise/shared/error_messages', model: f.object %>
+  <%= render 'shared/error_messages', model: f.object %>
     
   <%# 配送先の入力 %>
   <div class='shipping-address-form'>
-    <%# <h1 class='info-input-haedline'>
-      配送先入力
-    </h1> %>
     <div class="form-group">
       <div class='form-text-wrap'>
         <label class="form-text">郵便番号</label>

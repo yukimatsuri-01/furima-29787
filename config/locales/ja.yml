@@ -40,7 +40,14 @@ ja:
         bear_shipping_fee_id: 配送料の負担
         shipping_from_id: 発送元の地域
         shipping_within_day_id: 発送までの日数
-        sale_price: 価格  
+        sale_price: 価格 
+      address:
+        postal_code: 郵便番号
+        prefecture_id: 都道府県
+        city: 市区町村
+        address_line: 番地
+        building: 建物名
+        phone_number: 電話番号   
     models:
       user: ユーザ  
   devise:
