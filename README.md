@@ -48,12 +48,10 @@
 | ---------------- | ---------- |------------------------------- | 
 | user             | references | null: false, foreing_key: true |
 | item             | references | null: false, foreing_key: true |
-| address          | references | null: false, foreing_key: true |
 
 ### Asociation
 - belongs_to :item
 - belongs_to :user
-- belongs_to :address
 
 
 ## addresses テーブル
